@@ -1,0 +1,95 @@
+Aim
+To implement runtime polymorphism in C++ using virtual functions and an abstract class by
+creating a Shape hierarchy consisting of Circle, Rectangle, and Triangle, and computing their
+areas dynamically.
+Algorithm
+1. Start the program.
+2. Create an abstract class Shape.
+3. Declare a pure virtual function area() in the Shape class.
+4. Create derived classes Circle, Rectangle, and Triangle.
+5. Override the area() function in each derived class.
+6. Create base class pointers and assign them to derived class objects.
+7. Call the area() function using the base class pointers.
+8. Display the calculated areas.
+9. Stop the program.
+Program
+#include <iostream>
+using namespace std;
+class Shape
+{
+public:
+virtual float area() = 0; // Pure virtual function
+};
+
+
+class Circle : public Shape
+{
+private:
+float radius;
+public:
+Circle(float r)
+{
+radius = r;
+}
+float area()
+{
+return 3.14 * radius * radius;
+}
+};
+class Rectangle : public Shape
+{
+private:
+float length, breadth;
+public:
+Rectangle(float l, float b)
+{
+length = l;
+breadth = b;
+}
+float area()
+{
+return length * breadth;
+
+
+}
+};
+class Triangle : public Shape
+{
+private:
+float base, height;
+public:
+Triangle(float b, float h)
+{
+base = b;
+height = h;
+}
+float area()
+{
+return 0.5 * base * height;
+}
+};
+int main()
+{
+Circle c(5);
+Rectangle r(4, 6);
+Triangle t(10, 8);
+Shape *ptr;
+ptr = &c;
+cout << "Area of Circle: " << ptr->area() << endl;
+ptr = &r;
+cout << "Area of Rectangle: " << ptr->area() << endl;
+
+ptr = &t;
+cout << "Area of Triangle: " << ptr->area() << endl;
+return 0;
+}
+
+Inference
+The program demonstrates runtime polymorphism using a virtual function. The base class
+pointer Shape dynamically calls the appropriate area() function depending on whether it points to
+a Circle, Rectangle, or Triangle object. The Shape class is abstract because it contains a pure
+virtual function.
+
+Result
+Thus, runtime polymorphism was successfully implemented using virtual functions and an
+abstract class, and the areas of different shapes were computed dynamically.
