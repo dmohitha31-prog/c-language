@@ -1,16 +1,4 @@
-Aim
-To design and implement a simple University Management System using a C++ class with
-encapsulation, constructors, and destructors, and to demonstrate the object lifecycle.
-Algorithm
-1. Start the program.
-2. Define a Student class with private data members.
-3. Create a constructor to initialize student details.
-4. Create a member function to display the details.
-5. Create a destructor to demonstrate object destruction.
-6. Create an object of the Student class in the main() function.
-7. Display the student details.
-8. End the program, after which the destructor is called automatically.
-Program
+
 #include <iostream>
 using namespace std;
 class Student
